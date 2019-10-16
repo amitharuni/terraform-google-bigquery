@@ -1,4 +1,4 @@
-resource "google_bigquery_dataset" "dataset" ***REMOVED***
+resource "google_bigquery_dataset" "dataset" {
   count = length(var.dataset_id)
   dataset_id                  = var.dataset_id[count.index]
   friendly_name               = var.friendly_name
@@ -10,21 +10,21 @@ resource "google_bigquery_dataset" "dataset" ***REMOVED***
   labels                      = var.labels
 
 
-  dynamic "access" ***REMOVED***
-    for_each = [for ac in var.access: ***REMOVED***
+  dynamic "access" {
+    for_each = [for ac in var.access: {
       domain         = lookup(ac, "domain", null)
       group_by_email = lookup(ac, "group_by_email", null)
       role           = lookup(ac, "role", null)
       special_group  = lookup(ac, "special_group", null)
       user_by_email  = lookup(ac, "user_by_email", null)
-    ***REMOVED***]
-    content ***REMOVED***
+    }]
+    content {
       domain = access.value.domain
       group_by_email = access.value.group_by_email
       role = access.value.role
       special_group = access.value.special_group
       user_by_email = access.value.user_by_email
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+    }
+  }
+}
 

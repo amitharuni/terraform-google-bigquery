@@ -4,12 +4,12 @@ region       = "europe-west3"
 datasets = ["schema_1","schema_2"]
 dataset_access = []
 #dataset_access = [
-#  ***REMOVED***
-# ***REMOVED***
-# ***REMOVED***
-#  ***REMOVED***
-#  ***REMOVED***
-#  ***REMOVED***
-#  ***REMOVED***
-#  ***REMOVED***
+#  {
+#    role = "OWNER"
+#    user_by_email = "test@example.com"
+#  },
+#  {
+#    role = "READER"
+#    domain = "fofofo.com"
+#  }
 #]

@@ -1,8 +1,8 @@
-terraform ***REMOVED***
-  backend "gcs" ***REMOVED***
+terraform {
+  backend "gcs" {
     bucket  = "tfstate-bucket"
     prefix  = "bigquery"
-  ***REMOVED***
+  }
 
   required_version = ">= 0.12"
-***REMOVED***
+}

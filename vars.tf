@@ -1,14 +1,14 @@
-variable "project" ***REMOVED******REMOVED***
+variable "project" {}
 
-variable "region" ***REMOVED******REMOVED***
+variable "region" {}
 
-variable "datasets" ***REMOVED***
+variable "datasets" {
   description = "List of datasets to be created"
   type = "list"
   default = []
-***REMOVED***
+}
 
-variable "dataset_access" ***REMOVED***
+variable "dataset_access" {
   type = "list"
   default = []
-***REMOVED***
+}
